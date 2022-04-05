@@ -29,6 +29,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="main.jsp">메인</a></li>
 				<li><a href="bbs.jsp">게시판</a></li>
+				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -49,47 +50,42 @@
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top:20px;">
 				<form method="post" action="joinAction.jsp">
-					<h3 style="text-align: cetner:">회원가입 화면</h3>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
-					</div>
+					<h3 style="text-align: cetner:">FLEX</h3>
+					
 					
 					<div class="form-group">
-						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
-					</div>
-					
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
-					</div>
-					
-					
-					
-					<div class="form-group" style="text-align: center;">
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
-							</label>
-							
-							<label class="btn btn-primary">
-								<input type="radio" name="userGender" autocomplete="off" value="여자" checked>여자
-							</label>
-						</div>
-						
+						<input type="email" class="form-control" placeholder="예)kream@kream.co.kr" 
+						name="userEmail" maxlength="20">
 					</div>
 					
 					<div class="form-group">
-						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="20">
+						<input type="password" class="form-control" placeholder="영문,숫자,특수문자 조합 8~16자"
+						name="userPassword" maxlength="16">
 					</div>
 					
-					<input type="submit" class="btn btn-primary form-control" value="회원가입">
+					
+
+
+					
+					
+					
+					
+					<input type="submit" class="btn btn-primary form-control" value="가입하기">
 					
 				</form>
 		</div>
+		
 		<div class="col-lg-4"></div>
+		
+		
 	</div>
-
+	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
+	
+
+
 	
 	
 </body>

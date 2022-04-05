@@ -12,9 +12,9 @@
 <body>
 
 	<%
-		String userID=null;
-		if(session.getAttribute("userID") !=null){
-			userID=(String) session.getAttribute("userID");
+		String userEmail=null;
+		if(session.getAttribute("userEmail") !=null){
+			userEmail=(String) session.getAttribute("userEmail");
 		}
 	%>
 
@@ -37,10 +37,17 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="main.jsp">메인</a></li>
 				<li><a href="bbs.jsp">게시판</a></li>
+				<li><a href="jjs.jsp">장바구니</a></li>
+				
+				
 			</ul>
 			
+		
+			
+			
+			
 			<%
-				if(userID==null){
+				if(userEmail==null){
 					
 			%>
 			
@@ -55,6 +62,9 @@
 					</ul>
 				</li>
 			</ul>
+			
+			<!-- 로그인 성공시 보이는 화면 -->
+			
 			<%	
 				}else{
 			%>		

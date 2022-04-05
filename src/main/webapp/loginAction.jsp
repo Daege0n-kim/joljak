@@ -4,7 +4,7 @@
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="user" class="user.User" scope="page"/>
-<jsp:setProperty name="user" property="userID"/>
+<jsp:setProperty name="user" property="userEmail"/>
 <jsp:setProperty name="user" property="userPassword"/>
 <!DOCTYPE html>
 <html>
@@ -15,24 +15,29 @@
 </head>
 <body>
 	<%
-		String userID=null;
-	if(session.getAttribute("userID") !=null){
-		userID=(String) session.getAttribute("userID");
+		String userEmail=null;
+	if(session.getAttribute("userEmail") !=null){
+		userEmail=(String) session.getAttribute("userEmail");
 	}
-	if (userID != null){
+	if (userEmail != null){
 		PrintWriter script=response.getWriter();
 		script.println("<script>");
 		script.println("alert('이미 로그인이 되어있습니다')");
-		script.println("location.href='main.jsp'");
+		script.println("location.href='main2.jsp'");
 		script.println("</script>");
 		
 	}
+		
+	
 		UserDAO userDAO= new UserDAO();
-		int result=userDAO.login(user.getUserID(), user.getUserPassword());
+		int result=userDAO.login(user.getUserEmail(), user.getUserPassword());
 		if (result==1){
-			session.setAttribute("userID", user.getUserPassword());
+			session.setAttribute("userEmail", user.getUserEmail());
+			
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
+			
+			//로그인 성공시 main.jsp로 이동
 			script.println("location.href='main.jsp'");
 			script.println("</script>");
 			
@@ -48,7 +53,7 @@
 		else if (result==-1){
 			PrintWriter script=response.getWriter();
 			script.println("<script>");
-			script.println("alert('존재하지 않는 아이디입니다.')");
+			script.println("alert('존재하지 않는 이메일입니다.')");
 			script.println("history.back()");
 			script.println("</script>");
 			
